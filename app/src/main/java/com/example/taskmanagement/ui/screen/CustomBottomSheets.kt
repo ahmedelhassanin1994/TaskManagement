@@ -242,7 +242,7 @@ fun CustomBottomSheets(
             }, modifier = Modifier.fillMaxWidth()) {
                 Text(
                     if (task?.name == null) {
-                        "Insert Task"
+                        "Add"
                     } else {
                         "Update Task"
                     }

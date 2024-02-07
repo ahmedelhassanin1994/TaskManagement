@@ -19,7 +19,10 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+
+
     }
+
 
     buildTypes {
         release {
@@ -48,11 +51,16 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
+
 }
 
 dependencies {
     //Dagger Hilt
     implementation("com.google.dagger:hilt-android:2.44")
+    implementation("androidx.test.ext:junit-ktx:1.1.3")
+    implementation("com.google.ar:core:1.41.0")
+    androidTestImplementation ("androidx.test:runner:1.4.0")
     kapt("com.google.dagger:hilt-android-compiler:2.44")
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
 
@@ -67,11 +75,30 @@ dependencies {
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation ("androidx.compose.material3:material3:1.2.0-alpha02")
+//    implementation ("org.jetbrains.kotlin:kotlin-stdlib:1.5.31")
+
+
+    testImplementation ("com.google.truth:truth:1.1.2")
     testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    testImplementation ("androidx.arch.core:core-testing:2.1.0")
+    testImplementation ("org.mockito:mockito-core:3.12.4")
+    testImplementation ("androidx.room:room-testing:2.4.0")
+    testImplementation ("org.hamcrest:hamcrest-all:1.3")
+    testImplementation ("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.2.1")
+    testImplementation ("org.robolectric:robolectric:4.3.1")
+
+
+
+
+    androidTestImplementation ("com.google.truth:truth:1.0.1")
+    androidTestImplementation ("android.arch.core:core-testing:1.0.0")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     androidTestImplementation(platform("androidx.compose:compose-bom:2023.03.00"))
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
+    androidTestImplementation ("androidx.arch.core:core-testing:2.1.0")
+    androidTestImplementation ("com.google.truth:truth:1.1.2")
+    androidTestImplementation ("androidx.test.ext:junit:1.1.1")
+    androidTestImplementation ("org.mockito:mockito-core:3.12.4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 }

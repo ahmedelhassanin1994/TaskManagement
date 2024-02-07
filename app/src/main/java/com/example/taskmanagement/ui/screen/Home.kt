@@ -123,6 +123,8 @@ fun HomeScreen(viewModel: HomeViewModel = hiltViewModel()) {
                     Text("Insert a New Task")
                 }
             }
+
+            MyAlertDailog()
         }
     }
 }

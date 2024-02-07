@@ -24,14 +24,19 @@ object AppModule {
             "room_database"
         ).build()
     }
+
     @Provides
     @Singleton
     fun provideDao(appDatabase: AppDatabase) : TaskDao{
         return appDatabase.taskDao()
     }
+
+
     @Provides
     @Singleton
     fun provideTaskRepository(taskDao: TaskDao): TaskRepository {
         return TaskRepository(taskDao)
     }
+
+
 }
